@@ -1,0 +1,29 @@
+body {background-color: black;}
+
+#time {color: pink}
+#doesntmatter {color: pink}
+#doesmatter {color: pink}
+
+p {
+  font-family: Trebuchet MS;
+}
+
+a {
+  font-family: Trebuchet MS;
+}
+
+#time_Refresh_Butt {
+  font-family: Trebuchet MS;
+} 
+
+#chosen_time {
+  color: pink
+}
+
+#full_d {
+  color: pink
+}
+
+#cur_question {
+  color: pink
+}

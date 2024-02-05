@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LLC Stats Sheet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <body onload="timeRefresh()"></body>
+    <p><a href="../index.html">Home</a></p>
+    <p><a href="../timeSheet/index.html">LLC Time Sheet</a></p>
+    
+    <input type="text" id="question" placeholder = "Question"> 
+    
+  <button type="button" onclick="set_Question()">Set Question</button> 
+    
+  <p id = "cur_question"></p>
+    
+    <input type="text" id="choose_time" placeholder = "--:-- am/pm"> 
+    <button type="button" onclick="choose_Time()">Set Time</button> 
+    <p id = "chosen_time"></p>
+    <p id = "full_d"></p>
+    
+    <a id="doesntmatter" target = "_blank">Time Form</a>
+    
+    <span style="width:75px;display:inline-block"></span>
+
+    <button id="time_Refresh_Butt" type="button" onclick="timeRefresh()">Update Time</button>
+    
+    <p id = "time"></p>
+    
+    <a id="doesmatter" href = "https://bristolcc.libwizard.com/f/LLCstats?4438513=New%20Bedford&4438516=Service%20Desk%20(Circulation)&4438544=In%20person%20(walk-up)&4438548=Studying&4438554=No" target = "_blank">No Time Form</a>
+    
+    <br>
+    
+    <a id = "doesmatter" href = "https://bristolcc.libwizard.com/f/LLCstats" target = "_blank">Empty Form</a>
+    
+    <br>
+   <img src="https://64.media.tumblr.com/c266133cf5a2eb54fc2dac7e92443f7c/404ab047346e33e4-25/s540x810/e78f0e45942124d0ba096416a4c0f3d43f3c9f3b.gifv"></a>
+  </body>
+  </html>
