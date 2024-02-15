@@ -1,6 +1,6 @@
 // Requiring fs module in which
 // writeFile function is defined.
-const fs = require('fs')
+
  
 // Data which will write in a file.
 
@@ -8,7 +8,7 @@ const fs = require('fs')
 
 
 function fileTest() {
-
+    const fs = require('fs')
     let data = "Hello world."
  
     // Write data in 'Hello.txt' .
