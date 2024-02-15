@@ -6,7 +6,7 @@ import * as fs from 'fs';
 const fs = require('fs')
 
 
-function fileTest() {
+function file_test() {
     
     let data = "Hello world."
  
