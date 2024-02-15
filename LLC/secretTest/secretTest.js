@@ -2,23 +2,13 @@
 // writeFile function is defined.
  
 // Data which will write in a file.
-console.log("worked?");
-import * as fs from 'fs';
-const fs = require('fs');
+import data from './data.json' assert { type: 'json' };
+console.log(data);
 
 
 function file_test() {
-    
-    let data = "Hello world.";
- 
-    // Write data in 'Hello.txt' .
-    fs.writeFile('Hello.txt', data, (err) => {
-     
-        // In case of a error throw err.
-        if (err) throw err;
-    })
 
-
+    console.log(data);
 
     //testInput = document.getElementById("test").value;
 }
