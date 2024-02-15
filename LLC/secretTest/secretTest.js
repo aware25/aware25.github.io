@@ -1,25 +1,24 @@
-
-var testInput;
-var filePath;
-var isMode;
-var fileObject;
-
-function writeToFile( path, binary, object )
-{
- print( "Writing " + path + " to file..." );
- var output = writeFile( path, mode, object );
- print( "The number of bytes written to file was: " + output );
- return output
-}
-
-filePath = "test.xml";
-isMode = null;
-fileObject = testInput;
-writeToFile( filePath, isMode, fileObject );
+// Requiring fs module in which
+// writeFile function is defined.
+const fs = require('fs')
+ 
+// Data which will write in a file.
 
 
 
 
 function fileTest() {
-    testInput = document.getElementById("test").value;
+
+    let data = "Hello world."
+ 
+    // Write data in 'Hello.txt' .
+    fs.writeFile('Hello.txt', data, (err) => {
+     
+        // In case of a error throw err.
+        if (err) throw err;
+    })
+
+
+
+    //testInput = document.getElementById("test").value;
 }
