@@ -6,7 +6,7 @@ import data from './data.json' assert { type: 'json' };
 console.log(data);
 
 
-function file_test() {
+function abutton_that_buttons() {
 
     console.log(data);
 
