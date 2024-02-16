@@ -13,8 +13,9 @@ let Employee = function (name,mon,tue,wed,thu,fri,sat,total_hours) {
   };
 };
 
+let emp_times = get_staff_times();
 
-const alex = new Employee("Alex");
+const alex = new Employee("Alex", emp_times[0].mon, emp_times[0].tue, emp_times[0].wed, emp_times[0].thu, emp_times[0].fri, emp_times[0].sat);
 const angela = new Employee("Angela");
   //const yvette = new Employee("Yvette");
   //const suffrens = new Employee("Suffrens");
@@ -124,3 +125,9 @@ function timeToInt(monH1) {
 // END timeToInt
 /////////////////////////
 
+async function get_staff_times() {
+  const response = await fetch("staffTimes.json");
+  const times = await response.json();
+  return times;
+  //console.log(times);
+}
