@@ -16,8 +16,16 @@ let Employee = function (name,mon,tue,wed,thu,fri,sat,total_hours) {
   console.log("lil func outside",bbtimes);
 
  
-const alex = new Employee("Alex", bbtimes[0].mon);
+const alex = new Employee("Alex");
+console.log("bbtimes.mon");
+alex.mon = bbtimes.mon;
 console.log(alex);
+
+
+console.log("bbtimes[0]");
+alex.mon = bbtimes[0].mon;
+console.log(alex);
+
 
 
 async function get_staff_times() {
