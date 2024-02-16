@@ -1,4 +1,4 @@
-let bbtimes;
+let bbtimes = [];
 
 let Employee = function (name,mon,tue,wed,thu,fri,sat,total_hours) {
     this.name = name;
