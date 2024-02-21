@@ -43,4 +43,4 @@ function get_staff_time() {
 }  
 
 
-console.log(bbtimes[0])
+console.log("lajhdlsahdlksjah: ",bbtimes[0])
