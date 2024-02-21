@@ -1,10 +1,11 @@
 [{
     "name": "Alex",
+    "total_hours": "",
+    "Day": {
     "mon": "8 - 9",
     "tue": "8 - 9",
     "wed": "8 - 9",
     "thu": "8 - 9",
     "fri": "8 - 9",
-    "sat": "8 - 9",
-    "total_hours": ""
+    "sat": "8 - 9"}
   }]
