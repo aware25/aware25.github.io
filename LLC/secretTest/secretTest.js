@@ -12,7 +12,7 @@ let Employee = function (name,mon,tue,wed,thu,fri,sat,total_hours) {
       sat: sat = 0
     };
   };
-  
+
   bbtimes = get_staff_times();
   console.log("lil func outside",bbtimes);
 
@@ -41,3 +41,6 @@ function get_staff_time() {
     bbtimes = get_staff_times();
     console.log("lil func outside butt",bbtimes);
 }  
+
+
+console.log(bbtimes[0])
