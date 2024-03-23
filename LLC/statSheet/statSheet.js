@@ -26,6 +26,7 @@ var time;
 
 timeRefresh();
 //set_Question();
+document.getElementById("cur_campus").innerHTML = "Campus Set To: " + campus;
 document.getElementById("cur_question").innerHTML = "Question Set To: " + question;
 
 /////////////////////////////////////////
