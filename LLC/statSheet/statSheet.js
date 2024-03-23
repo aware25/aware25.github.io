@@ -15,7 +15,7 @@
 
 // url varibles for future use
 
-var campus = "New%20Bedford";
+var campus = "New Bedford";
 var desk = "Service%20Desk%20(Circulation)";
 var method = "In%20person%20(walk-up)";
 var question = "Studying";
