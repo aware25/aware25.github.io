@@ -33,51 +33,58 @@
       <br>
     </div>
 
-  <div id = "allQuestion">
+    <div id = "allQuestion">
 
-    <p> Question Set To:
-      <span id = "cur_question" class="question_output"></span>
-    </p>
+      <p> Question Set To:
+        <span id = "cur_question" class="question_output"></span>
+      </p>
 
-    <p> Select a Question:
-      <select id="select_question">
-          <option value="Research (books, catalog searches, database searches, web research)">Research (books, catalog searches, database searches, web research)</option>
-          <option value="Technology hardware/software (AccessBCC, Microsoft, etc.)">Technology hardware/software (AccessBCC, Microsoft, etc.)</option>
-          <option value="Printing, copying, or scanning">Printing, copying, or scanning</option>
-          <option value="Library Learning Commons: Access Services (Ill, course reserve, etc.)">Library Learning Commons: Access Services (Ill, course reserve, etc.)</option>
-          <option value="Directions or referrals">Directions or referrals</option>
-          <option value="Borrowing technology">Borrowing technology</option>
-          <option value="Library account activation">Library account activation</option>
-          <option value="Bristol campus card inquiries">Bristol campus card inquiries</option>
-          <option value="Book-A-Librarian Appointment">Book-A-Librarian Appointment</option>
-          <option value="Tutoring (appointments, requests. etc.)">Tutoring (appointments, requests. etc.)</option>
-          <option value="Writing Center (appointments, requests, etc.)">Writing Center (appointments, requests, etc.)</option>
-      </select>
-    </p>
-    
-    <input type="text" id="question" placeholder = "Question"> 
-    
-    <button type="button" onclick="set_Question()">Set Question</button> 
+      <p> Select a Question:
+        <select id="select_question">
+            <option value="Research (books, catalog searches, database searches, web research)">Research (books, catalog searches, database searches, web research)</option>
+            <option value="Technology hardware/software (AccessBCC, Microsoft, etc.)">Technology hardware/software (AccessBCC, Microsoft, etc.)</option>
+            <option value="Printing, copying, or scanning">Printing, copying, or scanning</option>
+            <option value="Library Learning Commons: Access Services (Ill, course reserve, etc.)">Library Learning Commons: Access Services (Ill, course reserve, etc.)</option>
+            <option value="Directions or referrals">Directions or referrals</option>
+            <option value="Borrowing technology">Borrowing technology</option>
+            <option value="Library account activation">Library account activation</option>
+            <option value="Bristol campus card inquiries">Bristol campus card inquiries</option>
+            <option value="Book-A-Librarian Appointment">Book-A-Librarian Appointment</option>
+            <option value="Tutoring (appointments, requests. etc.)">Tutoring (appointments, requests. etc.)</option>
+            <option value="Writing Center (appointments, requests, etc.)">Writing Center (appointments, requests, etc.)</option>
+        </select>
+      </p>
+      
+      <input type="text" id="question" placeholder = "Question"> 
+      
+      <button type="button" onclick="set_Question()">Set Question</button> 
 
-    <br><br>
+      <br><br>
 
-  </div>
-    
-    <input type="text" id="choose_time" placeholder = "--:-- am/pm"> 
-    <button type="button" onclick="choose_Time()">Set Time</button> 
-    <p id = "chosen_time"></p>
-    <p id = "full_d"></p>
-    
-    <a id="doesntmatter" target = "_blank">Time Form</a>
-    
-    <span style="width:75px;display:inline-block"></span>
+    </div>
 
-    <button id="time_Refresh_Butt" type="button" onclick="timeRefresh()">Update Time</button>
-    
-    <p id = "time"></p>
-    
+    <div id = "allTime">
+
+      <input type="text" id="choose_time" placeholder = "--:-- am/pm"> 
+      <button type="button" onclick="choose_Time()">Set Time</button> 
+      <p id = "chosen_time"></p>
+
+      <!-- <button type="button" onclick="set_All()">Set All</button> --> 
+
+      <p id = "full_d"></p>
+      
+      <a id="doesntmatter" target = "_blank">Time Form</a>
+      
+      <span style="width:75px;display:inline-block"></span>
+
+      <button id="time_Refresh_Butt" type="button" onclick="timeRefresh()">Update Time</button>
+      
+      <p id = "time"></p>
+
+    </div>
+
     <a id="doesmatter" href = "https://bristolcc.libwizard.com/f/LLCstats?4438513=New%20Bedford&4438516=Service%20Desk%20(Circulation)&4438544=In%20person%20(walk-up)&4438548=Studying&4438554=No" target = "_blank">No Time Form</a>
-    
+  
     <br>
     
     <a id = "doesmatter" href = "https://bristolcc.libwizard.com/f/LLCstats" target = "_blank">Empty Form</a>
