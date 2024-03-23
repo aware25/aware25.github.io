@@ -124,6 +124,8 @@ function choose_Time() {
 
 function timeRefresh() {
 
+  document.getElementById("cur_campus").innerHTML = "Question Set To: " + campus;
+
   document.getElementById("cur_question").innerHTML = "Question Set To: " + question;
 
   // pulls current date and time 
