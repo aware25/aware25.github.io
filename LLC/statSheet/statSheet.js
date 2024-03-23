@@ -18,16 +18,13 @@
 var campus = "";
 var desk = "Service%20Desk%20(Circulation)";
 var method = "In%20person%20(walk-up)";
-var question = "Studying";
+var question = "";
 var minutes_20 = "No";
 var time;
 
 // initiates time and date at current time and date
 
 timeRefresh();
-
-document.getElementById("cur_campus").innerHTML = "Campus Set To: " + campus;
-document.getElementById("cur_question").innerHTML = "Question Set To: " + question;
 
 /////////////////////////////////////////
 ////////// choose_Time STARTS //////////
@@ -128,11 +125,6 @@ function choose_Time()
 
 function timeRefresh()
 {
-
-  document.getElementById("cur_campus").innerHTML = campus;
-
-  document.getElementById("cur_question").innerHTML = "Question Set To: " + question;
-
   // pulls current date and time 
   
   const currentDate = new Date();
@@ -164,45 +156,31 @@ function timeRefresh()
 ///////////////////////////////////////
 
 function set_Question()
-{  
-  document.getElementById("cur_question").innerHTML += usr_question;
-  
-  var usr_question = document.getElementById("question").value;
-  document.getElementById("question").value = "";
-  document.getElementById("cur_question").innerHTML = "Question Set To: " + usr_question;
-  
-  question = usr_question;
-  
+{
+  selectElement = document.querySelector('#select_question');
+
+  var output = selectElement.value;
+
+  if (!document.getElementById("question").value) 
+  {
+    question = output;
+  }
+  else 
+  {
+    output = document.getElementById("question").value;
+    document.getElementById("question").value = "";
+    question = output;    
+  }
+
   var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
 
-  document.getElementById("doesntmatter").setAttribute("href", str);  
+  document.getElementById("doesntmatter").setAttribute("href", str);
+
+  document.querySelector('.question_output').textContent = output;
 }
 
 /////////////////////////////////////////
 ////////// set_Question ENDS ///////////
-///////////////////////////////////////
-
-/////////////////////////////////////////
-////////// dead_set_Campus STARTS //////
-///////////////////////////////////////
-  /*
-  function dead_set_Campus() {
-    
-    document.getElementById("cur_campus").innerHTML += usr_campus;
-    
-    var usr_campus = document.getElementById("campus").value;
-    document.getElementById("campus").value = "";
-    document.getElementById("cur_campus").innerHTML = "Campus Set To: " + usr_campus;
-    
-    campus = usr_campus;
-    var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
-
-    document.getElementById("doesntmatter").setAttribute("href", str);  
-    
-  }
-  */
-/////////////////////////////////////////
-////////// dead_set_Campus ENDS ///////////
 ///////////////////////////////////////
 
 /////////////////////////////////////////
@@ -213,7 +191,7 @@ function set_Campus()
 {
   selectElement = document.querySelector('#select_campus');
 
-  output = selectElement.value;
+  var output = selectElement.value;
 
   if (!document.getElementById("campus").value) 
   {
@@ -230,7 +208,7 @@ function set_Campus()
 
   document.getElementById("doesntmatter").setAttribute("href", str);
 
-  document.querySelector('.output').textContent = output;
+  document.querySelector('.campus_output').textContent = output;
 
   hideOrNah("allCampus");
 }
@@ -255,4 +233,29 @@ function hideOrNah(idName)
 
 /////////////////////////////////////////
 /////////// hideOrNah ENDS /////////////
+///////////////////////////////////////
+
+
+
+/////////////////////////////////////////
+////////// dead_set_Campus STARTS //////
+///////////////////////////////////////
+  /*
+  function dead_set_Campus() {
+    
+    document.getElementById("cur_campus").innerHTML += usr_campus;
+    
+    var usr_campus = document.getElementById("campus").value;
+    document.getElementById("campus").value = "";
+    document.getElementById("cur_campus").innerHTML = "Campus Set To: " + usr_campus;
+    
+    campus = usr_campus;
+    var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
+
+    document.getElementById("doesntmatter").setAttribute("href", str);  
+    
+  }
+  */
+/////////////////////////////////////////
+////////// dead_set_Campus ENDS ///////////
 ///////////////////////////////////////
