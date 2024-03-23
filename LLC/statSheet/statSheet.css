@@ -28,6 +28,10 @@ a {
   color: pink
 }
 
+#cur_campus {
+  color: pink
+}
+
  /* Dropdown Button */
  .dropbtn {
   background-color: #04AA6D;
