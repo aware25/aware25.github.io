@@ -15,7 +15,7 @@
 
 // url varibles for future use
 
-var campus = "New Bedford";
+var campus = "";
 var desk = "Service%20Desk%20(Circulation)";
 var method = "In%20person%20(walk-up)";
 var question = "Studying";
@@ -25,7 +25,7 @@ var time;
 // initiates time and date at current time and date
 
 timeRefresh();
-//set_Question();
+
 document.getElementById("cur_campus").innerHTML = "Campus Set To: " + campus;
 document.getElementById("cur_question").innerHTML = "Question Set To: " + question;
 
@@ -33,7 +33,8 @@ document.getElementById("cur_question").innerHTML = "Question Set To: " + questi
 ////////// choose_Time STARTS //////////
 ///////////////////////////////////////
 
-function choose_Time() { 
+function choose_Time()
+{ 
   
   // assigns user input and wipes textbox
   
@@ -56,22 +57,27 @@ function choose_Time() {
   // 8-11 do am 12-7 and 13-23 do pm
   // 24 shows error
   
-  if (time_split[1] == null) {       
-    
-    if (hh >= 8 && hh <= 11) {
+  if (time_split[1] == null)
+  {    
+    if (hh >= 8 && hh <= 11)
+    {
       time_split[1] = "00";
     
-    } else if ((hh > 11 && hh <= 12) || hh <= 7) {
+    }
+    else if ((hh > 11 && hh <= 12) || hh <= 7)
+    {
       time_split[1] = "00 PM";
     
-    } else if (hh > 12 && hh < 24) {
+    }
+    else if (hh > 12 && hh < 24)
+    {
         hh = hh - 12;
         time_split[1] = "00 PM";
-    } else {
-      document.getElementById("time").innerHTML = "Please Re-enter Time in Proper Format";
-    
-    }  
-    
+    }
+    else
+    {
+      document.getElementById("time").innerHTML = "Please Re-enter Time in Proper Format";    
+    }    
   }     
   
   // splits minutes off user input, converts to integer, and checks for meridian
@@ -116,14 +122,12 @@ function choose_Time() {
 ////////// choose_Time ENDS //////////
 /////////////////////////////////////
 
-
-
-
 /////////////////////////////////////////
 ////////// timeRefresh STARTS ////////// 
 ///////////////////////////////////////
 
-function timeRefresh() {
+function timeRefresh()
+{
 
   document.getElementById("cur_campus").innerHTML = campus;
 
@@ -155,14 +159,12 @@ function timeRefresh() {
 ////////// time_Refresh ENDS //////////  
 //////////////////////////////////////
 
-
-
 /////////////////////////////////////////
 ////////// set_Question STARTS /////////
 ///////////////////////////////////////
 
-function set_Question() {
-  
+function set_Question()
+{  
   document.getElementById("cur_question").innerHTML += usr_question;
   
   var usr_question = document.getElementById("question").value;
@@ -174,49 +176,53 @@ function set_Question() {
   var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
 
   document.getElementById("doesntmatter").setAttribute("href", str);  
-  
 }
 
+/////////////////////////////////////////
+////////// set_Question ENDS ///////////
+///////////////////////////////////////
+
+/////////////////////////////////////////
+////////// dead_set_Campus STARTS //////
+///////////////////////////////////////
+  /*
+  function dead_set_Campus() {
+    
+    document.getElementById("cur_campus").innerHTML += usr_campus;
+    
+    var usr_campus = document.getElementById("campus").value;
+    document.getElementById("campus").value = "";
+    document.getElementById("cur_campus").innerHTML = "Campus Set To: " + usr_campus;
+    
+    campus = usr_campus;
+    var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
+
+    document.getElementById("doesntmatter").setAttribute("href", str);  
+    
+  }
+  */
 /////////////////////////////////////////
 ////////// dead_set_Campus ENDS ///////////
 ///////////////////////////////////////
 
-function dead_set_Campus() {
-  
-  document.getElementById("cur_campus").innerHTML += usr_campus;
-  
-  var usr_campus = document.getElementById("campus").value;
-  document.getElementById("campus").value = "";
-  document.getElementById("cur_campus").innerHTML = "Campus Set To: " + usr_campus;
-  
-  campus = usr_campus;
-  var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
-
-  document.getElementById("doesntmatter").setAttribute("href", str);  
-  
-}
-
 /////////////////////////////////////////
-////////// dead_set_Campus ENDS ///////////
+////////// set_Campus STARTS////////////
 ///////////////////////////////////////
 
-/////////////////////////////////////////
-////////// set_Campus ENDS /////////////
-///////////////////////////////////////
-
-function set_Campus() {
-  selectElement = document.querySelector('#select1');
+function set_Campus()
+{
+  selectElement = document.querySelector('#select_campus');
 
   output = selectElement.value;
 
-  if (output != "Other") 
+  if (!document.getElementById("campus").value) 
   {
-    output = selectElement.value;
     campus = output;
   }
   else 
-  {    
+  {
     output = document.getElementById("campus").value;
+    document.getElementById("campus").value = "";
     campus = output;    
   }
 
@@ -233,8 +239,12 @@ function set_Campus() {
 ////////// set_Campus ENDS /////////////
 ///////////////////////////////////////
 
-function hideOrNah(idName) {
-  console.log(idName);
+/////////////////////////////////////////
+/////////// hideOrNah STARTS ///////////
+///////////////////////////////////////
+
+function hideOrNah(idName)
+{
   var x = document.getElementById(idName);
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -242,3 +252,7 @@ function hideOrNah(idName) {
     x.style.display = "none";
   }
 }
+
+/////////////////////////////////////////
+/////////// hideOrNah ENDS /////////////
+///////////////////////////////////////
