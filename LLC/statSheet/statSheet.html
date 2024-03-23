@@ -10,18 +10,44 @@
     <body onload="timeRefresh()"></body>
     <p><a href="../LLCHome.html">Home</a></p>
     <p><a href="../timeSheet/timeSheet.html">LLC Time Sheet</a></p>
+<!--
+    <button onclick="hideOrNah("allCampus")"> Set Campus </button>hideOrNah("allCampus")
+-->
+    <div id = "allCampus">
+
+      <p> Select one from the given options:
+        <select id="select1">
+            <option value="Attleboro">Attleboro</option>
+            <option value="Fall River">Fall River</option>
+            <option value="New Bedford">New Bedford</option>
+            <option value="Online Learning">Online Learning</option>
+            <option value="Taunton">Taunton</option>
+            <option value="Other">Other</option>
+        </select>
+      </p>
     
-    <input type="text" id="campus" placeholder = "Campus"> 
+      <input type="text" id="campus" placeholder = "Type to Select A Campus">
+
+      <button onclick="set_Campus()"> Set Campus </button>
+    </div>
+
+    <p> Campus Set To:
+      <span id = "cur_campus" class="output"></span>
+    </p>
     
+    <!--
     <button type="button" onclick="set_Campus()">Set Campus</button> 
       
     <p id = "cur_campus"></p>
+    -->
+    
+
 
     <input type="text" id="question" placeholder = "Question"> 
     
-  <button type="button" onclick="set_Question()">Set Question</button> 
+    <button type="button" onclick="set_Question()">Set Question</button> 
     
-  <p id = "cur_question"></p>
+    <p id = "cur_question"></p>
     
     <input type="text" id="choose_time" placeholder = "--:-- am/pm"> 
     <button type="button" onclick="choose_Time()">Set Time</button> 
@@ -47,13 +73,13 @@
   
   
    <div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div> 
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
   
   
   
@@ -64,4 +90,4 @@
   
   
   </body>
-  </html>
+</html>

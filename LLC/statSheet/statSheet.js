@@ -125,7 +125,7 @@ function choose_Time() {
 
 function timeRefresh() {
 
-  document.getElementById("cur_campus").innerHTML = "Question Set To: " + campus;
+  document.getElementById("cur_campus").innerHTML = campus;
 
   document.getElementById("cur_question").innerHTML = "Question Set To: " + question;
 
@@ -178,10 +178,10 @@ function set_Question() {
 }
 
 /////////////////////////////////////////
-////////// set_Campus ENDS ///////////
+////////// dead_set_Campus ENDS ///////////
 ///////////////////////////////////////
 
-function set_Campus() {
+function dead_set_Campus() {
   
   document.getElementById("cur_campus").innerHTML += usr_campus;
   
@@ -190,7 +190,6 @@ function set_Campus() {
   document.getElementById("cur_campus").innerHTML = "Campus Set To: " + usr_campus;
   
   campus = usr_campus;
-  
   var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
 
   document.getElementById("doesntmatter").setAttribute("href", str);  
@@ -198,5 +197,48 @@ function set_Campus() {
 }
 
 /////////////////////////////////////////
-////////// set_Campus ENDS ///////////
+////////// dead_set_Campus ENDS ///////////
 ///////////////////////////////////////
+
+/////////////////////////////////////////
+////////// set_Campus ENDS /////////////
+///////////////////////////////////////
+
+function set_Campus() {
+  selectElement = document.querySelector('#select1');
+
+  output = selectElement.value;
+
+  if (output != "Other") 
+  {
+    output = selectElement.value;
+    campus = output;
+  }
+  else 
+  {    
+    output = document.getElementById("campus").value;
+    campus = output;    
+  }
+
+  var str = `https://bristolcc.libwizard.com/f/LLCstats?4438513=${campus}&4438516=${desk}&4438544=${method}&4438548=${question}&4438554=${minutes_20}&4440691=${time}`;  
+
+  document.getElementById("doesntmatter").setAttribute("href", str);
+
+  document.querySelector('.output').textContent = output;
+
+  hideOrNah("allCampus");
+}
+
+/////////////////////////////////////////
+////////// set_Campus ENDS /////////////
+///////////////////////////////////////
+
+function hideOrNah(idName) {
+  console.log(idName);
+  var x = document.getElementById(idName);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
