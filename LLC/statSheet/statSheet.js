@@ -103,6 +103,10 @@ function choose_Time()
   var chosen_time = total_ms + currentDate_MN;
   
   let date = new Date(chosen_time);
+
+//////// looing for time erase bug when using set all 312312
+
+  //time = date;
   
   // uses date to display time
   // uses millisecond time in url
@@ -224,15 +228,39 @@ function set_Campus()
 function hideOrNah(idName)
 {
   var x = document.getElementById(idName);
-  if (x.style.display === "none") {
+  if (x.style.display === "none")
+  {
     x.style.display = "block";
-  } else {
+  }
+  else
+  {
     x.style.display = "none";
   }
 }
 
 /////////////////////////////////////////
 /////////// hideOrNah ENDS /////////////
+///////////////////////////////////////
+
+/////////////////////////////////////////
+////////// set_All STARTS //////////////
+///////////////////////////////////////
+
+function set_All()
+{
+  // some bug where time erases after first choose_time 312312
+
+  set_Campus();
+  set_Question();
+
+  if (document.getElementById("choose_time").value)
+  {
+    choose_Time();
+  }
+}
+
+/////////////////////////////////////////
+///////////// set_All ENDS /////////////
 ///////////////////////////////////////
 
 
